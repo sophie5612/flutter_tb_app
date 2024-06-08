@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_tb_app/src/alert/alert_tf_view.dart';
-import 'package:flutter_tb_app/src/timer/brush_timer_view.dart';
-
-import 'settings/settings_view.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({Key? key});
+  const HomePage({super.key});
 
   static const routeName = '/';
 
@@ -14,17 +11,6 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Home'),
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.settings),
-            onPressed: () {
-              // Navigate to the settings page. If the user leaves and returns
-              // to the app after it has been killed while running in the
-              // background, the navigation stack is restored.
-              Navigator.restorablePushNamed(context, SettingsView.routeName);
-            },
-          ),
-        ],
       ),
       body: Padding(
         /// Use const modifier for padding to improve performance
@@ -40,10 +26,9 @@ class HomePage extends StatelessWidget {
                     children: [
                       ElevatedButton.icon(
                         onPressed: () {
-                          /// Navigate to the page. If the user leaves and returns to the app after it has been killed while running in the background, the navigation stack is restored.
-                          Navigator.restorablePushNamed(
+                          Navigator.push(
                             context,
-                            AlertTfView.routeName,
+                            MaterialPageRoute(builder: (context) => const AlertTfView()),
                           );
                         },
                         icon: Icon(Icons.add),
@@ -51,18 +36,20 @@ class HomePage extends StatelessWidget {
                       )
                     ],
                   ),
+                  SizedBox(
+                    width: 1,
+                  ),
                   Column(
                     children: [
                       ElevatedButton.icon(
                         onPressed: () {
-                          /// Navigate to the page. If the user leaves and returns to the app after it has been killed while running in the background, the navigation stack is restored.
-                          Navigator.restorablePushNamed(
+                          Navigator.push(
                             context,
-                            BrushTimerView.routeName,
+                            MaterialPageRoute(builder: (context) => const AlertTfView()),
                           );
                         },
                         icon: Icon(Icons.timer),
-                        label: Text('Toothbrush Timer'),
+                        label: Text('Altert  Toothfairy'),
                       )
                     ],
                   ),

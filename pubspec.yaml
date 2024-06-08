@@ -1,5 +1,5 @@
 name: flutter_tb_app
-description: "A new Flutter project."
+description: "Flutter application for the ToothBrigade project"
 
 # Prevent accidental publishing to pub.dev.
 publish_to: 'none'
